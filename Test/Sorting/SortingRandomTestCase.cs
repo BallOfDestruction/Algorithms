@@ -1,6 +1,6 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core.Generators;
 using Core.Sorting;
 using JetBrains.Annotations;
 
@@ -17,19 +17,11 @@ namespace Test.Sorting
 
         public bool CheckSorting(int itemsCount)
         {
-            var items = GenerateItems(itemsCount);
+            var items = new IntRandomGenerator().Generate(itemsCount);
 
             var sortedItems = _sorting.DoSort(items);
 
             return CheckWorking(sortedItems);
-        }
-
-        [NotNull]
-        private IEnumerable<int> GenerateItems(int itemsCount)
-        {
-            var random = new Random(DateTime.Now.Millisecond);
-
-            return Enumerable.Range(0, itemsCount).Select(w => random.Next());
         }
 
         private bool CheckWorking([NotNull] IEnumerable<int> sortedItems)

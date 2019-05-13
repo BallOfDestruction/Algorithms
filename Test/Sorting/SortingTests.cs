@@ -6,7 +6,7 @@ namespace Test.Sorting
     [TestFixture]
     public class SortingTests
     {
-        private const int CountItems = 10000;
+        private const int ItemsCount = 10000;
         
         [Test]
         public void BubbleSorting()
@@ -15,7 +15,7 @@ namespace Test.Sorting
             
             var test = new SortingRandomTestCase(bubbleSorting);
             
-            Assert.IsTrue(test.CheckSorting(CountItems));
+            Assert.IsTrue(test.CheckSorting(ItemsCount));
         }
     }
 }
