@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using JetBrains.Annotations;
 
 namespace Core.Sorting
@@ -10,18 +8,16 @@ namespace Core.Sorting
     {
         public string Name => "Bubble sorting";
         
-        public IEnumerable<T> DoSort(IEnumerable<T> items)
+        public T[] DoSort(T[] items)
         {
-            var arrayItems = items.ToArray();
-
-            var itemsCount = arrayItems.Length;
+            var itemsCount = items.Length;
 
             for (var i = 0; i < itemsCount; i++)
                 for (var j = 0; j < itemsCount; j++)
-                    if (arrayItems[i].CompareTo(arrayItems[j]) < 0)
-                        SwapItems(arrayItems, i, j);
+                    if (items[i].CompareTo(items[j]) < 0)
+                        SwapItems(items, i, j);
 
-            return arrayItems.ToList();
+            return items;
         }
 
 
