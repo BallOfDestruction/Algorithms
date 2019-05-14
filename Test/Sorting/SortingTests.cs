@@ -32,6 +32,14 @@ namespace Test.Sorting
             
             TrySorting(bubbleSorting);
         }
+                
+        [Test]
+        public void InsertionSorting()
+        {
+            var bubbleSorting = new InsertionSorting<int>();
+            
+            TrySorting(bubbleSorting);
+        }
 
         private void TrySorting([NotNull] ISorting<int> sorting)
         {

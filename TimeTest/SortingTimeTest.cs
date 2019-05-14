@@ -13,6 +13,7 @@ namespace TimeTest
             new BubbleSorting<int>(),
             new ShakerSorting<int>(),
             new CombSorting<int>(),
+            new InsertionSorting<int>(),
         };
         
         public void Do(int itemsCount, int worksCount)
