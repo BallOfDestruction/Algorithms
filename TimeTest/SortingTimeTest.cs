@@ -10,10 +10,10 @@ namespace TimeTest
     {
         [NotNull] private List<ISorting<int>> _sortings = new List<ISorting<int>>
         {
-            new BubbleSorting<int>(),
-            new ShakerSorting<int>(),
+//            new BubbleSorting<int>(),
+//            new ShakerSorting<int>(),
             new CombSorting<int>(),
-            new InsertionSorting<int>(),
+//            new InsertionSorting<int>(),
             new ShellSorting<int>(),
         };
         

@@ -37,22 +37,6 @@ namespace Test.Sorting
         }
 
         [Test]
-        public void SmallIntersectionSorting()
-        {
-            var test = new SortingRandomTestCase(new InsertionSorting<int>());
-            
-            var sorting = new InsertionSorting<byte>();
-            var intGenerator = new ByteRandomGenerator();
-            var random = intGenerator.Generate(10);
-            var items = sorting.DoSort(random);
-
-            var str = items.Aggregate("", (s, i) => s + "  " + i);
-            Console.WriteLine(str);
-            
-            Assert.IsTrue(test.Check(items));
-        }
-        
-        [Test]
         public void ShellSorting()
         {
             TrySorting(new ShellSorting<int>());
@@ -71,6 +55,19 @@ namespace Test.Sorting
             Assert.IsTrue(test.CheckSorting(1));
             
             Assert.IsTrue(test.CheckSorting(0));
+        }
+
+        private void SimpleTrySorting([NotNull] ISorting<byte> sorting)
+        {
+            var intGenerator = new ByteRandomGenerator();
+            var random = intGenerator.Generate(10);
+            var items = sorting.DoSort(random);
+
+            var str = items.Aggregate("", (s, i) => s + "  " + i);
+            Console.WriteLine(str);
+            
+            var testCase = new SortingTestCase<byte>(sorting);
+            Assert.IsTrue(testCase.Check(items));
         }
     }
 }

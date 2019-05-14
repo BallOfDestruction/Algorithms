@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 
 namespace Test.Sorting
 {
-    public class SortingRandomTestCase : SortingTestCase
+    public class SortingRandomTestCase : SortingTestCase<int>
     {
         public SortingRandomTestCase([NotNull] ISorting<int> sorting) : base(sorting)
         {
