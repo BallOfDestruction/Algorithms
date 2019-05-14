@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core.Sorting;
@@ -14,11 +15,12 @@ namespace Test.Sorting
             Sorting = sorting;
         }   
         
-        protected bool Check([NotNull] IEnumerable<int> sortedItems)
+        public bool Check<T>([NotNull] IEnumerable<T> sortedItems)
+            where T : IComparable, IComparable<T>
         {
             var items = sortedItems.ToArray();
             for (var i = 0; i < items.Length - 1; i++)
-                if (items[i] > items[i + 1])
+                if (items[i].CompareTo(items[i + 1]) > 0)
                     return false;
 
             return true;

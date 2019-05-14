@@ -30,7 +30,7 @@ namespace TimeTest
             foreach (var sorting in _sortings)
             {
                 var time = stopWatch.CheckTime(() => randomGenerator.Generate(itemsCount),
-                    ints => sorting.DoSort(ints),
+                    ints => sorting.DoSort(ints ?? new int[0]),
                     worksCount);
             
                 Console.WriteLine();

@@ -1,3 +1,6 @@
+using System;
+using System.Linq;
+using Core.Generators;
 using Core.Sorting;
 using JetBrains.Annotations;
 using NUnit.Framework;
@@ -12,35 +15,43 @@ namespace Test.Sorting
         [Test]
         public void BubbleSorting()
         {
-            var bubbleSorting = new BubbleSorting<int>();
-            
-            TrySorting(bubbleSorting);
+            TrySorting(new BubbleSorting<int>());
         }
         
         [Test]
         public void ShakerSorting()
         {
-            var bubbleSorting = new ShakerSorting<int>();
-            
-            TrySorting(bubbleSorting);
+            TrySorting(new ShakerSorting<int>());
         }
         
         [Test]
         public void CombSorting()
         {
-            var bubbleSorting = new CombSorting<int>();
-            
-            TrySorting(bubbleSorting);
+            TrySorting(new CombSorting<int>());
         }
                 
         [Test]
         public void InsertionSorting()
         {
-            var bubbleSorting = new InsertionSorting<int>();
-            
-            TrySorting(bubbleSorting);
+            TrySorting(new InsertionSorting<int>());
         }
 
+        [Test]
+        public void SmallIntersectionSorting()
+        {
+            var test = new SortingRandomTestCase(new InsertionSorting<int>());
+            
+            var sorting = new InsertionSorting<byte>();
+            var intGenerator = new ByteRandomGenerator();
+            var random = intGenerator.Generate(10);
+            var items = sorting.DoSort(random);
+
+            var str = items.Aggregate("", (s, i) => s + "  " + i);
+            Console.WriteLine(str);
+            
+            Assert.IsTrue(test.Check(items));
+        }
+        
         private void TrySorting([NotNull] ISorting<int> sorting)
         {
             var test = new SortingRandomTestCase(sorting);

@@ -6,7 +6,7 @@ namespace Test.Sorting
 {
     public class SortingRandomTestCase : SortingTestCase
     {
-        public SortingRandomTestCase([NotNull] ISorting<int> sorting) :base(sorting)
+        public SortingRandomTestCase([NotNull] ISorting<int> sorting) : base(sorting)
         {
         }
 
