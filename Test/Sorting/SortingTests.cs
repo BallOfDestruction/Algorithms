@@ -1,4 +1,5 @@
 using Core.Sorting;
+using JetBrains.Annotations;
 using NUnit.Framework;
 
 namespace Test.Sorting
@@ -13,9 +14,7 @@ namespace Test.Sorting
         {
             var bubbleSorting = new BubbleSorting<int>();
             
-            var test = new SortingRandomTestCase(bubbleSorting);
-            
-            Assert.IsTrue(test.CheckSorting(ItemsCount));
+            TrySorting(bubbleSorting);
         }
         
         [Test]
@@ -23,9 +22,30 @@ namespace Test.Sorting
         {
             var bubbleSorting = new ShakerSorting<int>();
             
-            var test = new SortingRandomTestCase(bubbleSorting);
+            TrySorting(bubbleSorting);
+        }
+        
+        [Test]
+        public void CombSorting()
+        {
+            var bubbleSorting = new CombSorting<int>();
+            
+            TrySorting(bubbleSorting);
+        }
+
+        private void TrySorting([NotNull] ISorting<int> sorting)
+        {
+            var test = new SortingRandomTestCase(sorting);
             
             Assert.IsTrue(test.CheckSorting(ItemsCount));
+            
+            Assert.IsTrue(test.CheckSorting(3));
+            
+            Assert.IsTrue(test.CheckSorting(2));
+            
+            Assert.IsTrue(test.CheckSorting(1));
+            
+            Assert.IsTrue(test.CheckSorting(0));
         }
     }
 }

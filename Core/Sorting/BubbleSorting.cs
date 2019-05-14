@@ -12,7 +12,7 @@ namespace Core.Sorting
         {
             var itemsCount = items.Length;
 
-            for (var i = itemsCount - 1; i > 1; i--)
+            for (var i = itemsCount - 1; i > 0; i--)
                 for (var j = 0; j < i; j++)
                     if (items[j].CompareTo(items[j + 1]) > 0)
                         items.Swap(j, j + 1);

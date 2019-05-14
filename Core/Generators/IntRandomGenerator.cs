@@ -11,7 +11,7 @@ namespace Core.Generators
         {
             var random = new Random(DateTime.Now.Millisecond);
 
-            return Enumerable.Range(0, itemsCount).Select(w => random.Next(0, 255)).ToArray();
+            return Enumerable.Range(0, itemsCount).Select(w => random.Next()).ToArray();
         }
     }
 }
