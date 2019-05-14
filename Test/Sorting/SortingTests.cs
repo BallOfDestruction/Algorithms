@@ -17,5 +17,15 @@ namespace Test.Sorting
             
             Assert.IsTrue(test.CheckSorting(ItemsCount));
         }
+        
+        [Test]
+        public void ShakerSorting()
+        {
+            var bubbleSorting = new ShakerSorting<int>();
+            
+            var test = new SortingRandomTestCase(bubbleSorting);
+            
+            Assert.IsTrue(test.CheckSorting(ItemsCount));
+        }
     }
 }

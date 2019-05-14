@@ -5,7 +5,7 @@ namespace TimeTest
     internal class Program
     {
         private const int WorksCount = 10;
-        private const int ItemsCount = 1000;
+        private const int ItemsCount = 10000;
         
         public static void Main(string[] args)
         {

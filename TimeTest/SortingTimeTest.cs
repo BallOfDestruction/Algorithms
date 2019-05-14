@@ -11,7 +11,7 @@ namespace TimeTest
         [NotNull] private List<ISorting<int>> _sortings = new List<ISorting<int>>
         {
             new BubbleSorting<int>(),
-            new BubbleSorting<int>(),
+            new ShakerSorting<int>(),
         };
         
         public void Do(int itemsCount, int worksCount)

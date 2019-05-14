@@ -1,5 +1,5 @@
 using System;
-using JetBrains.Annotations;
+using Core.Extensions;
 
 namespace Core.Sorting
 {
@@ -12,20 +12,12 @@ namespace Core.Sorting
         {
             var itemsCount = items.Length;
 
-            for (var i = 0; i < itemsCount; i++)
-                for (var j = 0; j < itemsCount; j++)
-                    if (items[i].CompareTo(items[j]) < 0)
-                        SwapItems(items, i, j);
+            for (var i = itemsCount - 1; i > 1; i--)
+                for (var j = 0; j < i; j++)
+                    if (items[j].CompareTo(items[j + 1]) > 0)
+                        items.Swap(j, j + 1);
 
             return items;
-        }
-
-
-        private void SwapItems([NotNull] T[] items, int firstPosition, int secondPosition)
-        {
-            var firstItem = items[firstPosition];
-            items[firstPosition] = items[secondPosition];
-            items[secondPosition] = firstItem;
         }
     }
 }
