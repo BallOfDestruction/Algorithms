@@ -52,6 +52,12 @@ namespace Test.Sorting
             Assert.IsTrue(test.Check(items));
         }
         
+        [Test]
+        public void ShellSorting()
+        {
+            TrySorting(new ShellSorting<int>());
+        }
+        
         private void TrySorting([NotNull] ISorting<int> sorting)
         {
             var test = new SortingRandomTestCase(sorting);

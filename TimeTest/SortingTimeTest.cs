@@ -14,6 +14,7 @@ namespace TimeTest
             new ShakerSorting<int>(),
             new CombSorting<int>(),
             new InsertionSorting<int>(),
+            new ShellSorting<int>(),
         };
         
         public void Do(int itemsCount, int worksCount)
