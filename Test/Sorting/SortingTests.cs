@@ -47,6 +47,13 @@ namespace Test.Sorting
             TrySorting(new ShellSorting<int>());
         }
         
+        [Test]
+        public void GnomeSorting()
+        {
+            SimpleTrySorting(new GnomeSorting<byte>());
+            TrySorting(new GnomeSorting<int>());
+        }
+        
         private void TrySorting([NotNull] ISorting<int> sorting)
         {
             var test = new SortingRandomTestCase(sorting);
