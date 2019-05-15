@@ -17,6 +17,7 @@ namespace TimeTest
             new ShellSorting<int>(),
             new GnomeSorting<int>(),
             new SelectionSorting<int>(),
+            new HeapSorting<int>(),
         };
         
         public void Do(int itemsCount, int worksCount)

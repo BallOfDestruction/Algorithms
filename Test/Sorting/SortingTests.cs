@@ -61,6 +61,13 @@ namespace Test.Sorting
             TrySorting(new SelectionSorting<int>());
         }
         
+        [Test]
+        public void HeapSorting()
+        {
+            SimpleTrySorting(new HeapSorting<byte>());
+            TrySorting(new HeapSorting<int>());
+        }
+        
         private void TrySorting([NotNull] ISorting<int> sorting)
         {
             var test = new SortingRandomTestCase(sorting);
