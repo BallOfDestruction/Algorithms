@@ -15,30 +15,35 @@ namespace Test.Sorting
         [Test]
         public void BubbleSorting()
         {
+            SimpleTrySorting(new BubbleSorting<byte>());
             TrySorting(new BubbleSorting<int>());
         }
         
         [Test]
         public void ShakerSorting()
         {
+            SimpleTrySorting(new ShakerSorting<byte>());
             TrySorting(new ShakerSorting<int>());
         }
         
         [Test]
         public void CombSorting()
         {
+            SimpleTrySorting(new CombSorting<byte>());
             TrySorting(new CombSorting<int>());
         }
                 
         [Test]
         public void InsertionSorting()
         {
+            SimpleTrySorting(new InsertionSorting<byte>());
             TrySorting(new InsertionSorting<int>());
         }
 
         [Test]
         public void ShellSorting()
         {
+            SimpleTrySorting(new ShellSorting<byte>());
             TrySorting(new ShellSorting<int>());
         }
         

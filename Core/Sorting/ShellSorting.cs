@@ -15,7 +15,6 @@ namespace Core.Sorting
             var gaps = GetGaps(itemsCount);
 
             foreach (var gap in gaps)
-            {
                 for (var i = gap; i < itemsCount; i++)
                 {
                     var item = items[i];
@@ -29,7 +28,6 @@ namespace Core.Sorting
 
                     items[j] = item;
                 }
-            }
 
             return items;
         }
@@ -51,6 +49,7 @@ namespace Core.Sorting
         }
 
         [NotNull]
+        // ReSharper disable once UnusedMember.Local
         private List<int> GetHibbardGaps(int itemCount)
         {
             var gaps = new List<int>();
