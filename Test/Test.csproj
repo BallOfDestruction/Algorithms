@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Codeforce\Tasks\1667A\TestTask.cs" />
     <Compile Include="Sorting\SortingRandomTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sorting\SortingTestCase.cs" />
